@@ -1,0 +1,65 @@
+{
+  "version": 2,
+  "extra_config": {},
+  "timeout": "3000ms",
+  "cache_ttl": "300s",
+  "output_encoding": "json",
+  "name": "test",
+  "port": 8090,
+  "endpoints": [
+    {
+      "endpoint": "/",
+      "method": "GET",
+      "output_encoding": "json",
+      "extra_config": {},
+      "backend": [
+        {
+          "url_pattern": "/",
+          "encoding": "json",
+          "method": "GET",
+          "extra_config": {},
+          "host": [
+            "http://server:8080"
+          ],
+          "disable_host_sanitize": false
+        }
+      ]
+    },
+    {
+      "endpoint": "/private",
+      "method": "GET",
+      "output_encoding": "json",
+      "extra_config": {},
+      "backend": [
+        {
+          "url_pattern": "/private",
+          "encoding": "json",
+          "method": "GET",
+          "extra_config": {},
+          "host": [
+            "http://server:8080"
+          ],
+          "disable_host_sanitize": false
+        }
+      ]
+    },
+    {
+      "endpoint": "/admin",
+      "method": "GET",
+      "output_encoding": "json",
+      "extra_config": {},
+      "backend": [
+        {
+          "url_pattern": "/admin",
+          "encoding": "json",
+          "method": "GET",
+          "extra_config": {},
+          "host": [
+            "http://server:8080"
+          ],
+          "disable_host_sanitize": false
+        }
+      ]
+    }
+  ]
+}
