@@ -1,0 +1,15 @@
+{
+    "name": "server",
+    "dockerComposeFile": ["../docker-compose-dev-vscode.yml"],
+    "service": "server",
+    "workspaceFolder": "/opt/project",
+    "shutdownAction": "none",
+    "extensions": ["golang.Go"],
+    "remoteUser": "vscode",
+    "settings": { 
+          "go.toolsManagement.checkForUpdates": "local",
+          "go.gopath": "/go",
+          "go.useLanguageServer": true
+      }
+  }
+  

@@ -1,0 +1,18 @@
+version: "3.1"
+services:
+  server:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile-dev-vscode.dockerfile
+    working_dir: /opt/project
+    volumes:
+      - ./backend:/opt/project
+    command: go run /opt/project/main.go
+    
+  kraken:
+    image: devopsfaith/krakend
+    volumes:
+      - ./krakend.json:/etc/krakend/krakend.json
+    command: run --config /etc/krakend/krakend.json
+    ports:
+      - 8090:8090
